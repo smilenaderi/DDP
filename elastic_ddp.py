@@ -61,7 +61,8 @@ def demo_basic():
     log_interval = 10  # Print the progress every 10 batches
 
     for epoch in range(num_epochs):
-        print("Epoch [{}/{}]".format(epoch + 1, num_epochs))
+        if (device_id == 0):
+            print("Epoch [{}/{}]".format(epoch + 1, num_epochs))
         if epoch == 1:
             # Training loop with QPS calculation
             start_time = time.time()
@@ -82,7 +83,7 @@ def demo_basic():
             if batch_idx % log_interval == 0 and epoch > 0:
                 elapsed_time = time.time() - start_time
                 qps = query_count / elapsed_time
-                print("  Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  device {}"
+                print("  Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  on device: {}"
                       .format(batch_idx + 1, len(dataloader), loss.item(), qps, device_id))
 
 
