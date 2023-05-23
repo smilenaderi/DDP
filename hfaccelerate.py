@@ -52,7 +52,7 @@ device = accelerator.device
 
 model = ToyModel().to(device)
 optimizer = optim.SGD(model.parameters(), lr=0.001)
-
+criterion = nn.CrossEntropyLoss()
 # dataset = load_dataset('my_dataset')
 # data = torch.utils.data.DataLoader(dataset, shuffle=True)
 dataloader = DataLoader(dataset, batch_size=1000, shuffle=True)
@@ -76,7 +76,7 @@ for epoch in range(num_epochs):
           optimizer.zero_grad()
 
           output = model(source)
-          loss = F.CrossEntropyLoss(output, targets)
+          loss = criterion(output, targets)
 
           accelerator.backward(loss)
 
