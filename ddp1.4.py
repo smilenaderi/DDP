@@ -230,7 +230,7 @@ def init_process(
 
 
 if __name__ == "__main__":
-    world_size = 2
+    world_size = 8
     processes = []
     mp.set_start_method("spawn")
     for rank in range(world_size):
