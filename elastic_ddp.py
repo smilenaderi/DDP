@@ -8,12 +8,18 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 class ToyModel(nn.Module):
     def __init__(self):
         super(ToyModel, self).__init__()
-        self.net1 = nn.Linear(10, 10)
-        self.relu = nn.ReLU()
-        self.net2 = nn.Linear(10, 5)
+        self.fc1 = nn.Linear(10000, 10000)
+        self.fc2 = nn.Linear(10000, 10000)
+        self.fc3 = nn.Linear(10000, 20000)
+        self.fc4 = nn.Linear(20000, 10)
 
-    def forward(self, x):
-        return self.net2(self.relu(self.net1(x)))
+
+def forward(self, x):
+    x = self.fc1(x)
+    x = self.fc2(x)
+    x = self.fc3(x)
+    x = self.fc4(x)
+    return x
 
 
 def demo_basic():
