@@ -82,7 +82,7 @@ def demo_basic():
             if batch_idx % log_interval == 0 and epoch > 0:
                 elapsed_time = time.time() - start_time
                 qps = query_count / elapsed_time
-                print("EPOCH:   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  on device: {}"
+                print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  on device: {}"
                       .format(epoch, batch_idx + 1, len(dataloader), loss.item(), qps, device_id))
     elapsed_time = time.time() - start_time
 
