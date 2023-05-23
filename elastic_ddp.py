@@ -40,7 +40,7 @@ class MyDataset(torch.utils.data.Dataset):
         return sample, target
 
 dataset = MyDataset()
-dataloader = DataLoader(dataset, batch_size=5000, shuffle=True)
+dataloader = DataLoader(dataset, batch_size=100, shuffle=True)
 
 def demo_basic():
     # outputs = torch.randn((20000, 10000))  # Replace with your actual data
