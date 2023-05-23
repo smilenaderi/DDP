@@ -1,9 +1,12 @@
+import time
+
 import torch
 import torch.distributed as dist
 import torch.nn as nn
 import torch.optim as optim
 
 from torch.nn.parallel import DistributedDataParallel as DDP
+from torch.utils.data import DataLoader
 
 class ToyModel(nn.Module):
     def __init__(self):
@@ -22,7 +25,26 @@ def forward(self, x):
     return x
 
 
+class MyDataset(torch.utils.data.Dataset):
+    def __init__(self):
+        # Create sample data
+        self.data = torch.randn((20000, 10000))  # Replace with your actual data
+        self.targets = torch.randint(0, 10, (20000,))  # Replace with your actual targets
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        sample = self.data[idx]
+        target = self.targets[idx]
+        return sample, target
+
+dataset = MyDataset()
+dataloader = DataLoader(dataset, batch_size=1000, shuffle=True)
+
 def demo_basic():
+    # outputs = torch.randn((20000, 10000))  # Replace with your actual data
+    # labels = torch.randint(0, 10, (20000,))
     dist.init_process_group("nccl")
     rank = dist.get_rank()
     print(f"Start running basic DDP example on rank {rank}.")
@@ -32,14 +54,42 @@ def demo_basic():
     model = ToyModel().to(device_id)
     ddp_model = DDP(model, device_ids=[device_id])
 
-    loss_fn = nn.MSELoss()
+    criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(ddp_model.parameters(), lr=0.001)
 
-    optimizer.zero_grad()
-    outputs = ddp_model(torch.randn(20, 10))
-    labels = torch.randn(20, 5).to(device_id)
-    loss_fn(outputs, labels).backward()
-    optimizer.step()
+    num_epochs = 10  # Number of epochs for training
+    log_interval = 10  # Print the progress every 10 batches
+
+    for epoch in range(num_epochs):
+        if epoch == 1:
+            # Training loop with QPS calculation
+            start_time = time.time()
+            query_count = 0
+        for batch_idx, (inputs, targets) in enumerate(dataloader):
+            inputs, targets = inputs.to(device_id), targets.to(device_id)
+            # Forward pass
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
+
+            # Backward pass and optimization
+            optimizer.zero_grad()
+            # outputs = ddp_model(torch.randn(20, 10))
+            # labels = torch.randn(20, 5).to(device_id)
+
+            criterion(inputs, targets).backward()
+            optimizer.step()
+            if epoch > 0:
+                query_count += inputs.size(0)
+
+            if batch_idx % log_interval == 0 and epoch > 0:
+                elapsed_time = time.time() - start_time
+                qps = query_count / elapsed_time
+                print("  Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  device {}"
+                      .format(batch_idx + 1, len(dataloader), loss.item(), qps, device_id))
+
+
+
+
 
 if __name__ == "__main__":
     demo_basic()
