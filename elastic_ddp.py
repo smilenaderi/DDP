@@ -61,6 +61,7 @@ def demo_basic():
     log_interval = 10  # Print the progress every 10 batches
 
     for epoch in range(num_epochs):
+        print("Epoch [{}/{}]".format(epoch + 1, num_epochs))
         if epoch == 1:
             # Training loop with QPS calculation
             start_time = time.time()
