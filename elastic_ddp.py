@@ -73,10 +73,7 @@ def demo_basic():
 
             # Backward pass and optimization
             optimizer.zero_grad()
-            # outputs = ddp_model(torch.randn(20, 10))
-            # labels = torch.randn(20, 5).to(device_id)
-
-            criterion(inputs, targets).backward()
+            loss.backward()
             optimizer.step()
             if epoch > 0:
                 query_count += inputs.size(0)
