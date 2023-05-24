@@ -64,9 +64,6 @@ def demo_basic():
                             pin_memory=True)
 
 
-
-
-
     # create model and move it to GPU with id rank
     device_id = rank % torch.cuda.device_count()
     model = ToyModel().to(device_id)
