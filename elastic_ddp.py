@@ -9,7 +9,7 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader
 
 
-NUM_REPLICAS = 1
+NUM_REPLICAS = 8
 BATCH_SIZE = 5000
 
 
