@@ -34,8 +34,8 @@ class ToyModel(nn.Module):
 class MyDataset(torch.utils.data.Dataset):
     def __init__(self):
         # Create sample data
-        self.data = torch.randn((100000, 10000))  # Replace with your actual data
-        self.targets = torch.randint(0, 10, (100000,))  # Replace with your actual targets
+        self.data = torch.randn((200000, 10000))  # Replace with your actual data
+        self.targets = torch.randint(0, 10, (200000,))  # Replace with your actual targets
 
     def __len__(self):
         return len(self.data)
