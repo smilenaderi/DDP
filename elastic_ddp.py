@@ -28,8 +28,8 @@ class ToyModel(nn.Module):
 class MyDataset(torch.utils.data.Dataset):
     def __init__(self):
         # Create sample data
-        self.data = torch.randn((20000, 10000))  # Replace with your actual data
-        self.targets = torch.randint(0, 10, (20000,))  # Replace with your actual targets
+        self.data = torch.randn((40000, 10000))  # Replace with your actual data
+        self.targets = torch.randint(0, 10, (40000,))  # Replace with your actual targets
 
     def __len__(self):
         return len(self.data)
@@ -49,16 +49,16 @@ def demo_basic():
     # labels = torch.randint(0, 10, (20000,))
     dist.init_process_group("nccl")
     rank = dist.get_rank()
-    print(f"Start running basic DDP example on rank {rank}.")
+    print(f"Start running basic DDP example on rank {rank}.\n")
 
     sampler = DistributedSampler(dataset,
-                                 num_replicas=8,
+                                 num_replicas=1,
                                  rank=rank,
                                  shuffle=True,  # May be True
                                  seed=42)
     # Wrap train dataset into DataLoader
     dataloader = DataLoader(dataset,
-                            batch_size=1000,
+                            batch_size=5000,
                             shuffle=False,  # Must be False!
                             num_workers=4,
                             sampler=sampler,
