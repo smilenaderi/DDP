@@ -8,6 +8,12 @@ from torch.utils.data import DataLoader, DistributedSampler
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader
 
+
+NUM_REPLICAS = 1
+BATCH_SIZE = 2500
+
+
+
 class ToyModel(nn.Module):
     def __init__(self):
         super(ToyModel, self).__init__()
@@ -28,8 +34,8 @@ class ToyModel(nn.Module):
 class MyDataset(torch.utils.data.Dataset):
     def __init__(self):
         # Create sample data
-        self.data = torch.randn((40000, 10000))  # Replace with your actual data
-        self.targets = torch.randint(0, 10, (40000,))  # Replace with your actual targets
+        self.data = torch.randn((20000, 10000))  # Replace with your actual data
+        self.targets = torch.randint(0, 10, (20000,))  # Replace with your actual targets
 
     def __len__(self):
         return len(self.data)
@@ -52,13 +58,13 @@ def demo_basic():
     print(f"Start running basic DDP example on rank {rank}.\n")
 
     sampler = DistributedSampler(dataset,
-                                 num_replicas=1,
+                                 num_replicas=NUM_REPLICAS,
                                  rank=rank,
                                  shuffle=True,  # May be True
                                  seed=42)
     # Wrap train dataset into DataLoader
     dataloader = DataLoader(dataset,
-                            batch_size=5000,
+                            batch_size=BATCH_SIZE,
                             shuffle=False,  # Must be False!
                             num_workers=4,
                             sampler=sampler,
@@ -96,11 +102,11 @@ def demo_basic():
             if epoch > 0:
                 query_count += inputs.size(0)
 
-            if batch_idx % log_interval == 0 and epoch > 0:
-                elapsed_time = time.time() - start_time
-                qps = query_count / elapsed_time
-                print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  on device: {}"
-                      .format(epoch, batch_idx + 1, len(dataloader), loss.item(), qps, device_id))
+            # if batch_idx % log_interval == 0 and epoch > 0:
+            elapsed_time = time.time() - start_time
+            qps = query_count / elapsed_time
+            print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  on device: {}, query_count"
+                  .format(epoch, batch_idx + 1, len(dataloader), loss.item(), qps, device_id, query_count))
     elapsed_time = time.time() - start_time
 
     print("elapsed_time", elapsed_time)
