@@ -81,7 +81,7 @@ def demo_basic():
 
     num_epochs = 10  # Number of epochs for training
     log_interval = 10  # Print the progress every 10 batches
-    print(f' Loading Time: {time.time() - start_time} rank {rank}')
+    print(f' Loading Time: {time.time() - start_time} rank {rank} ')
     for epoch in range(num_epochs):
         dataloader.sampler.set_epoch(epoch)
         # if epoch == 1:
@@ -105,8 +105,8 @@ def demo_basic():
             # if batch_idx % log_interval == 0 and epoch > 0:
             elapsed_time = time.time() - start_time
             qps = query_count / elapsed_time
-            print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f},  on device: {}, query_count: {}"
-                  .format(epoch, batch_idx + 1, len(dataloader), loss.item(), qps, device_id, query_count))
+            print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f},  on device: {}, query_count: {}, time: {}"
+                  .format(epoch, batch_idx + 1, len(dataloader), loss.item(), qps, device_id, query_count, time.time()-start_time))
     elapsed_time = time.time() - start_time
 
     print("elapsed_time", elapsed_time)
