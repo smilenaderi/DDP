@@ -1,0 +1,453 @@
+torchrun --nnodes=1 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=127.0.0.1:29400 elastic_ddp.py
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Start running basic DDP example on rank 0.
+
+Start running basic DDP example on rank 6.
+
+Start running basic DDP example on rank 4.
+
+Start running basic DDP example on rank 5.
+
+Start running basic DDP example on rank 7.
+
+Start running basic DDP example on rank 3.
+
+Start running basic DDP example on rank 1.
+
+Start running basic DDP example on rank 2.
+
+ Loading Time: 27.683383226394653 rank 0 
+ Loading Time: 27.23300004005432 rank 7 
+ Loading Time: 27.649142742156982 rank 3 
+ Loading Time: 27.7447292804718 rank 1 
+ Loading Time: 28.024824857711792 rank 6 
+ Loading Time: 27.645721435546875 rank 5 
+ Loading Time: 27.57799983024597 rank 4 
+ Loading Time: 27.555352449417114 rank 2 
+EPOCH:0   Step [1/5], Loss: 2.3081, QPS: 164.01,  on device: 1, query_count: 5000, time: 33.48723840713501
+EPOCH:0   Step [1/5], Loss: 2.3093, QPS: 164.64,  on device: 3, query_count: 5000, time: 33.44831728935242
+EPOCH:0   Step [1/5], Loss: 2.3113, QPS: 162.75,  on device: 6, query_count: 5000, time: 33.88168525695801
+EPOCH:0   Step [1/5], Loss: 2.3099, QPS: 164.71,  on device: 4, query_count: 5000, time: 33.45220899581909
+EPOCH:0   Step [1/5], Loss: 2.3091, QPS: 166.10,  on device: 7, query_count: 5000, time: 33.121474266052246
+EPOCH:0   Step [1/5], Loss: 2.3081, QPS: 164.48,  on device: 2, query_count: 5000, time: 33.48192739486694
+EPOCH:0   Step [1/5], Loss: 2.3078, QPS: 164.13,  on device: 5, query_count: 5000, time: 33.58505702018738
+EPOCH:0   Step [1/5], Loss: 2.3066, QPS: 163.66,  on device: 0, query_count: 5000, time: 33.76702833175659
+EPOCH:0   Step [2/5], Loss: 2.3096, QPS: 298.31,  on device: 1, query_count: 10000, time: 36.550578355789185
+EPOCH:0   Step [2/5], Loss: 2.3066, QPS: 298.65,  on device: 3, query_count: 10000, time: 36.586759090423584
+EPOCH:0   Step [2/5], Loss: 2.3077, QPS: 301.59,  on device: 7, query_count: 10000, time: 36.19895100593567
+EPOCH:0   Step [2/5], Loss: 2.3066, QPS: 298.34,  on device: 2, query_count: 10000, time: 36.61914014816284
+EPOCH:0   Step [2/5], Loss: 2.3066, QPS: 298.61,  on device: 4, query_count: 10000, time: 36.657520055770874
+EPOCH:0   Step [2/5], Loss: 2.3081, QPS: 297.42,  on device: 5, query_count: 10000, time: 36.762227058410645
+EPOCH:0   Step [2/5], Loss: 2.3068, QPS: 294.70,  on device: 6, query_count: 10000, time: 37.15411043167114
+EPOCH:0   Step [2/5], Loss: 2.3078, QPS: 295.83,  on device: 0, query_count: 10000, time: 37.12406134605408
+EPOCH:0   Step [3/5], Loss: 2.3097, QPS: 410.02,  on device: 1, query_count: 15000, time: 39.68495297431946
+EPOCH:0   Step [3/5], Loss: 2.3070, QPS: 413.99,  on device: 7, query_count: 15000, time: 39.24666380882263
+EPOCH:0   Step [3/5], Loss: 2.3075, QPS: 409.61,  on device: 3, query_count: 15000, time: 39.78874182701111
+EPOCH:0   Step [3/5], Loss: 2.3072, QPS: 409.24,  on device: 2, query_count: 15000, time: 39.794888973236084
+EPOCH:0   Step [3/5], Loss: 2.3077, QPS: 408.82,  on device: 4, query_count: 15000, time: 39.831769704818726
+EPOCH:0   Step [3/5], Loss: 2.3070, QPS: 407.65,  on device: 5, query_count: 15000, time: 39.95970630645752
+EPOCH:0   Step [3/5], Loss: 2.3098, QPS: 403.36,  on device: 6, query_count: 15000, time: 40.404887437820435
+EPOCH:0   Step [3/5], Loss: 2.3063, QPS: 403.68,  on device: 0, query_count: 15000, time: 40.45203518867493
+EPOCH:0   Step [4/5], Loss: 2.3075, QPS: 503.54,  on device: 1, query_count: 20000, time: 42.773751735687256
+EPOCH:0   Step [4/5], Loss: 2.3058, QPS: 509.16,  on device: 7, query_count: 20000, time: 42.348769426345825
+EPOCH:0   Step [4/5], Loss: 2.3072, QPS: 502.23,  on device: 3, query_count: 20000, time: 43.00481939315796
+EPOCH:0   Step [4/5], Loss: 2.3074, QPS: 502.15,  on device: 2, query_count: 20000, time: 42.99854874610901
+EPOCH:0   Step [4/5], Loss: 2.3083, QPS: 501.69,  on device: 4, query_count: 20000, time: 43.08977007865906
+EPOCH:0   Step [4/5], Loss: 2.3118, QPS: 500.08,  on device: 5, query_count: 20000, time: 43.17862105369568
+EPOCH:0   Step [4/5], Loss: 2.3056, QPS: 494.58,  on device: 6, query_count: 20000, time: 43.678449392318726
+EPOCH:0   Step [4/5], Loss: 2.3096, QPS: 494.00,  on device: 0, query_count: 20000, time: 43.82338333129883
+EPOCH:0   Step [5/5], Loss: 2.3067, QPS: 584.02,  on device: 1, query_count: 25000, time: 45.88283038139343
+EPOCH:0   Step [5/5], Loss: 2.3066, QPS: 589.87,  on device: 7, query_count: 25000, time: 45.41692781448364
+EPOCH:0   Step [5/5], Loss: 2.3093, QPS: 580.88,  on device: 3, query_count: 25000, time: 46.227845191955566
+EPOCH:0   Step [5/5], Loss: 2.3064, QPS: 580.95,  on device: 2, query_count: 25000, time: 46.18314790725708
+EPOCH:0   Step [5/5], Loss: 2.3060, QPS: 579.73,  on device: 4, query_count: 25000, time: 46.31125068664551
+EPOCH:0   Step [5/5], Loss: 2.3058, QPS: 578.53,  on device: 5, query_count: 25000, time: 46.40903973579407
+EPOCH:0   Step [5/5], Loss: 2.3091, QPS: 571.92,  on device: 6, query_count: 25000, time: 47.02389049530029
+EPOCH:0   Step [5/5], Loss: 2.3068, QPS: 570.03,  on device: 0, query_count: 25000, time: 47.19910144805908
+EPOCH:1   Step [1/5], Loss: 2.3085, QPS: 106.72,  on device: 1, query_count: 5000, time: 49.96898698806763
+EPOCH:1   Step [1/5], Loss: 2.3050, QPS: 107.34,  on device: 7, query_count: 5000, time: 49.66993951797485
+EPOCH:1   Step [1/5], Loss: 2.3086, QPS: 105.58,  on device: 3, query_count: 5000, time: 50.55400228500366
+EPOCH:1   Step [1/5], Loss: 2.3073, QPS: 105.28,  on device: 5, query_count: 5000, time: 50.700799226760864
+EPOCH:1   Step [1/5], Loss: 2.3076, QPS: 104.81,  on device: 2, query_count: 5000, time: 50.86056709289551
+EPOCH:1   Step [1/5], Loss: 2.3105, QPS: 104.77,  on device: 4, query_count: 5000, time: 50.97461485862732
+EPOCH:1   Step [1/5], Loss: 2.3098, QPS: 103.52,  on device: 6, query_count: 5000, time: 51.58938694000244
+EPOCH:1   Step [1/5], Loss: 2.3084, QPS: 102.76,  on device: 0, query_count: 5000, time: 52.013550758361816
+EPOCH:1   Step [2/5], Loss: 2.3056, QPS: 199.99,  on device: 1, query_count: 10000, time: 53.13691592216492
+EPOCH:1   Step [2/5], Loss: 2.3084, QPS: 201.19,  on device: 7, query_count: 10000, time: 52.769296169281006
+EPOCH:1   Step [2/5], Loss: 2.3079, QPS: 197.68,  on device: 3, query_count: 10000, time: 53.799840211868286
+EPOCH:1   Step [2/5], Loss: 2.3073, QPS: 197.10,  on device: 5, query_count: 10000, time: 53.98321723937988
+EPOCH:1   Step [2/5], Loss: 2.3099, QPS: 196.48,  on device: 2, query_count: 10000, time: 54.09390425682068
+EPOCH:1   Step [2/5], Loss: 2.3080, QPS: 196.05,  on device: 4, query_count: 10000, time: 54.22588396072388
+EPOCH:1   Step [2/5], Loss: 2.3075, QPS: 193.71,  on device: 6, query_count: 10000, time: 54.98123097419739
+EPOCH:1   Step [2/5], Loss: 2.3088, QPS: 192.13,  on device: 0, query_count: 10000, time: 55.42718458175659
+EPOCH:1   Step [3/5], Loss: 2.3082, QPS: 282.11,  on device: 1, query_count: 15000, time: 56.26863479614258
+EPOCH:1   Step [3/5], Loss: 2.3088, QPS: 284.08,  on device: 7, query_count: 15000, time: 55.87286329269409
+EPOCH:1   Step [3/5], Loss: 2.3066, QPS: 278.64,  on device: 3, query_count: 15000, time: 57.11005520820618
+EPOCH:1   Step [3/5], Loss: 2.3065, QPS: 277.69,  on device: 5, query_count: 15000, time: 57.251054525375366
+EPOCH:1   Step [3/5], Loss: 2.3066, QPS: 277.12,  on device: 2, query_count: 15000, time: 57.33670735359192
+EPOCH:1   Step [3/5], Loss: 2.3082, QPS: 276.45,  on device: 4, query_count: 15000, time: 57.502726316452026
+EPOCH:1   Step [3/5], Loss: 2.3076, QPS: 272.65,  on device: 6, query_count: 15000, time: 58.34176445007324
+EPOCH:1   Step [3/5], Loss: 2.3065, QPS: 270.46,  on device: 0, query_count: 15000, time: 58.88302683830261
+EPOCH:1   Step [4/5], Loss: 2.3063, QPS: 355.23,  on device: 1, query_count: 20000, time: 59.46760392189026
+EPOCH:1   Step [4/5], Loss: 2.3086, QPS: 357.74,  on device: 7, query_count: 20000, time: 59.056617736816406
+EPOCH:1   Step [4/5], Loss: 2.3063, QPS: 350.00,  on device: 3, query_count: 20000, time: 60.39496397972107
+EPOCH:1   Step [4/5], Loss: 2.3072, QPS: 349.13,  on device: 5, query_count: 20000, time: 60.5068416595459
+EPOCH:1   Step [4/5], Loss: 2.3073, QPS: 348.61,  on device: 2, query_count: 20000, time: 60.63666534423828
+EPOCH:1   Step [4/5], Loss: 2.3065, QPS: 347.61,  on device: 4, query_count: 20000, time: 60.80541372299194
+EPOCH:1   Step [4/5], Loss: 2.3078, QPS: 342.61,  on device: 6, query_count: 20000, time: 61.73277235031128
+EPOCH:1   Step [4/5], Loss: 2.3058, QPS: 339.46,  on device: 0, query_count: 20000, time: 62.35863184928894
+EPOCH:1   Step [5/5], Loss: 2.3065, QPS: 420.16,  on device: 1, query_count: 25000, time: 62.66161060333252
+EPOCH:1   Step [5/5], Loss: 2.3062, QPS: 423.08,  on device: 7, query_count: 25000, time: 62.270559310913086
+EPOCH:1   Step [5/5], Loss: 2.3048, QPS: 413.71,  on device: 3, query_count: 25000, time: 63.70611906051636
+EPOCH:1   Step [5/5], Loss: 2.3073, QPS: 412.94,  on device: 5, query_count: 25000, time: 63.782888889312744
+EPOCH:1   Step [5/5], Loss: 2.3065, QPS: 412.06,  on device: 2, query_count: 25000, time: 63.93053102493286
+EPOCH:1   Step [5/5], Loss: 2.3065, QPS: 410.92,  on device: 4, query_count: 25000, time: 64.10185503959656
+EPOCH:1   Step [5/5], Loss: 2.3062, QPS: 404.75,  on device: 6, query_count: 25000, time: 65.106192111969
+EPOCH:1   Step [5/5], Loss: 2.3094, QPS: 400.69,  on device: 0, query_count: 25000, time: 65.85643339157104
+EPOCH:2   Step [1/5], Loss: 2.3091, QPS: 78.47,  on device: 1, query_count: 5000, time: 66.85516881942749
+EPOCH:2   Step [1/5], Loss: 2.3079, QPS: 78.81,  on device: 7, query_count: 5000, time: 66.6299238204956
+EPOCH:2   Step [1/5], Loss: 2.3083, QPS: 77.09,  on device: 3, query_count: 5000, time: 68.07147669792175
+EPOCH:2   Step [1/5], Loss: 2.3080, QPS: 76.68,  on device: 5, query_count: 5000, time: 68.45933604240417
+EPOCH:2   Step [1/5], Loss: 2.3060, QPS: 76.47,  on device: 2, query_count: 5000, time: 68.60366606712341
+EPOCH:2   Step [1/5], Loss: 2.3086, QPS: 76.38,  on device: 4, query_count: 5000, time: 68.67606472969055
+EPOCH:2   Step [1/5], Loss: 2.3081, QPS: 75.58,  on device: 6, query_count: 5000, time: 69.46791386604309
+EPOCH:2   Step [2/5], Loss: 2.3066, QPS: 149.50,  on device: 1, query_count: 10000, time: 70.04412603378296
+EPOCH:2   Step [2/5], Loss: 2.3076, QPS: 150.01,  on device: 7, query_count: 10000, time: 69.87789702415466
+EPOCH:2   Step [1/5], Loss: 2.3100, QPS: 74.22,  on device: 0, query_count: 5000, time: 70.82167840003967
+EPOCH:2   Step [2/5], Loss: 2.3079, QPS: 146.83,  on device: 3, query_count: 10000, time: 71.34062051773071
+EPOCH:2   Step [2/5], Loss: 2.3083, QPS: 146.00,  on device: 5, query_count: 10000, time: 71.76686930656433
+EPOCH:2   Step [2/5], Loss: 2.3055, QPS: 145.69,  on device: 2, query_count: 10000, time: 71.85832381248474
+EPOCH:2   Step [2/5], Loss: 2.3094, QPS: 145.54,  on device: 4, query_count: 10000, time: 71.95850324630737
+EPOCH:2   Step [2/5], Loss: 2.3074, QPS: 143.88,  on device: 6, query_count: 10000, time: 72.88721370697021
+EPOCH:2   Step [3/5], Loss: 2.3078, QPS: 214.05,  on device: 1, query_count: 15000, time: 73.24607539176941
+EPOCH:2   Step [3/5], Loss: 2.3077, QPS: 214.56,  on device: 7, query_count: 15000, time: 73.11178803443909
+EPOCH:2   Step [2/5], Loss: 2.3070, QPS: 141.13,  on device: 0, query_count: 10000, time: 74.29937553405762
+EPOCH:2   Step [3/5], Loss: 2.3088, QPS: 210.16,  on device: 3, query_count: 15000, time: 74.66526365280151
+EPOCH:2   Step [3/5], Loss: 2.3111, QPS: 208.91,  on device: 5, query_count: 15000, time: 75.09848022460938
+EPOCH:2   Step [3/5], Loss: 2.3063, QPS: 208.65,  on device: 2, query_count: 15000, time: 75.14867925643921
+EPOCH:2   Step [3/5], Loss: 2.3093, QPS: 208.36,  on device: 4, query_count: 15000, time: 75.31981468200684
+EPOCH:2   Step [3/5], Loss: 2.3080, QPS: 205.70,  on device: 6, query_count: 15000, time: 76.28030920028687
+EPOCH:2   Step [4/5], Loss: 2.3044, QPS: 272.93,  on device: 1, query_count: 20000, time: 76.45468497276306
+EPOCH:2   Step [4/5], Loss: 2.3066, QPS: 273.43,  on device: 7, query_count: 20000, time: 76.3411271572113
+EPOCH:2   Step [3/5], Loss: 2.3068, QPS: 201.79,  on device: 0, query_count: 15000, time: 77.84364318847656
+EPOCH:2   Step [4/5], Loss: 2.3065, QPS: 267.74,  on device: 3, query_count: 20000, time: 77.97943186759949
+EPOCH:2   Step [4/5], Loss: 2.3079, QPS: 266.20,  on device: 5, query_count: 20000, time: 78.43980312347412
+EPOCH:2   Step [4/5], Loss: 2.3099, QPS: 266.02,  on device: 2, query_count: 20000, time: 78.46564197540283
+EPOCH:2   Step [4/5], Loss: 2.3095, QPS: 265.42,  on device: 4, query_count: 20000, time: 78.64686918258667
+EPOCH:2   Step [4/5], Loss: 2.3083, QPS: 262.08,  on device: 6, query_count: 20000, time: 79.69186663627625
+EPOCH:2   Step [5/5], Loss: 2.3070, QPS: 326.85,  on device: 1, query_count: 25000, time: 79.69202446937561
+EPOCH:2   Step [5/5], Loss: 2.3095, QPS: 327.33,  on device: 7, query_count: 25000, time: 79.63209056854248
+EPOCH:2   Step [5/5], Loss: 2.3091, QPS: 320.46,  on device: 3, query_count: 25000, time: 81.3007743358612
+EPOCH:2   Step [4/5], Loss: 2.3093, QPS: 256.81,  on device: 0, query_count: 20000, time: 81.37401986122131
+EPOCH:2   Step [5/5], Loss: 2.3096, QPS: 318.58,  on device: 5, query_count: 25000, time: 81.76805400848389
+EPOCH:2   Step [5/5], Loss: 2.3088, QPS: 318.47,  on device: 2, query_count: 25000, time: 81.80186533927917
+EPOCH:2   Step [5/5], Loss: 2.3057, QPS: 317.74,  on device: 4, query_count: 25000, time: 81.98735046386719
+EPOCH:2   Step [5/5], Loss: 2.3067, QPS: 313.58,  on device: 6, query_count: 25000, time: 83.12470602989197
+EPOCH:3   Step [1/5], Loss: 2.3064, QPS: 61.92,  on device: 1, query_count: 5000, time: 83.9522008895874
+EPOCH:3   Step [1/5], Loss: 2.3101, QPS: 61.88,  on device: 7, query_count: 5000, time: 83.90743255615234
+EPOCH:2   Step [5/5], Loss: 2.3059, QPS: 307.10,  on device: 0, query_count: 25000, time: 84.92728567123413
+EPOCH:3   Step [1/5], Loss: 2.3103, QPS: 60.70,  on device: 3, query_count: 5000, time: 85.6974184513092
+EPOCH:3   Step [1/5], Loss: 2.3087, QPS: 60.02,  on device: 5, query_count: 5000, time: 86.60743141174316
+EPOCH:3   Step [1/5], Loss: 2.3074, QPS: 60.05,  on device: 2, query_count: 5000, time: 86.57838368415833
+EPOCH:3   Step [1/5], Loss: 2.3101, QPS: 59.94,  on device: 4, query_count: 5000, time: 86.71665477752686
+EPOCH:3   Step [2/5], Loss: 2.3089, QPS: 119.07,  on device: 1, query_count: 10000, time: 87.21000504493713
+EPOCH:3   Step [1/5], Loss: 2.3079, QPS: 59.38,  on device: 6, query_count: 5000, time: 87.60896611213684
+EPOCH:3   Step [2/5], Loss: 2.3093, QPS: 119.13,  on device: 7, query_count: 10000, time: 87.04826712608337
+EPOCH:3   Step [2/5], Loss: 2.3069, QPS: 116.64,  on device: 3, query_count: 10000, time: 89.04303026199341
+EPOCH:3   Step [1/5], Loss: 2.3095, QPS: 57.81,  on device: 0, query_count: 5000, time: 90.00315999984741
+EPOCH:3   Step [2/5], Loss: 2.3103, QPS: 115.42,  on device: 5, query_count: 10000, time: 89.98056674003601
+EPOCH:3   Step [2/5], Loss: 2.3061, QPS: 115.46,  on device: 2, query_count: 10000, time: 89.89505958557129
+EPOCH:3   Step [2/5], Loss: 2.3077, QPS: 115.27,  on device: 4, query_count: 10000, time: 90.07705402374268
+EPOCH:3   Step [3/5], Loss: 2.3052, QPS: 171.93,  on device: 1, query_count: 15000, time: 90.4800615310669
+EPOCH:3   Step [3/5], Loss: 2.3085, QPS: 172.25,  on device: 7, query_count: 15000, time: 90.22413992881775
+EPOCH:3   Step [2/5], Loss: 2.3092, QPS: 114.10,  on device: 6, query_count: 10000, time: 91.06596541404724
+EPOCH:3   Step [3/5], Loss: 2.3075, QPS: 168.39,  on device: 3, query_count: 15000, time: 92.44027590751648
+EPOCH:3   Step [3/5], Loss: 2.3097, QPS: 166.80,  on device: 2, query_count: 15000, time: 93.226149559021
+EPOCH:3   Step [3/5], Loss: 2.3102, QPS: 166.64,  on device: 5, query_count: 15000, time: 93.32957434654236
+EPOCH:3   Step [3/5], Loss: 2.3097, QPS: 166.46,  on device: 4, query_count: 15000, time: 93.453378200531
+EPOCH:3   Step [2/5], Loss: 2.3061, QPS: 111.07,  on device: 0, query_count: 10000, time: 93.57299828529358
+EPOCH:3   Step [4/5], Loss: 2.3083, QPS: 220.96,  on device: 1, query_count: 20000, time: 93.70513272285461
+EPOCH:3   Step [4/5], Loss: 2.3114, QPS: 221.59,  on device: 7, query_count: 20000, time: 93.47299551963806
+EPOCH:3   Step [3/5], Loss: 2.3079, QPS: 164.66,  on device: 6, query_count: 15000, time: 94.57705187797546
+EPOCH:3   Step [4/5], Loss: 2.3075, QPS: 216.28,  on device: 3, query_count: 20000, time: 95.85311913490295
+EPOCH:3   Step [4/5], Loss: 2.3075, QPS: 214.45,  on device: 2, query_count: 20000, time: 96.58425164222717
+EPOCH:3   Step [4/5], Loss: 2.3096, QPS: 214.22,  on device: 5, query_count: 20000, time: 96.73569321632385
+EPOCH:3   Step [5/5], Loss: 2.3077, QPS: 266.70,  on device: 1, query_count: 25000, time: 96.92956376075745
+EPOCH:3   Step [4/5], Loss: 2.3062, QPS: 213.93,  on device: 4, query_count: 20000, time: 96.83939290046692
+EPOCH:3   Step [5/5], Loss: 2.3070, QPS: 267.36,  on device: 7, query_count: 25000, time: 96.67959570884705
+EPOCH:3   Step [3/5], Loss: 2.3070, QPS: 160.25,  on device: 0, query_count: 15000, time: 97.17196726799011
+EPOCH:3   Step [4/5], Loss: 2.3069, QPS: 211.39,  on device: 6, query_count: 20000, time: 98.06534099578857
+EPOCH:3   Step [5/5], Loss: 2.3082, QPS: 260.72,  on device: 3, query_count: 25000, time: 99.23018407821655
+EPOCH:3   Step [5/5], Loss: 2.3095, QPS: 258.75,  on device: 2, query_count: 25000, time: 99.95537281036377
+EPOCH:3   Step [5/5], Loss: 2.3081, QPS: 258.35,  on device: 5, query_count: 25000, time: 100.10963463783264
+EPOCH:3   Step [5/5], Loss: 2.3082, QPS: 258.07,  on device: 4, query_count: 25000, time: 100.2426745891571
+EPOCH:3   Step [4/5], Loss: 2.3073, QPS: 205.75,  on device: 0, query_count: 20000, time: 100.7695460319519
+EPOCH:4   Step [1/5], Loss: 2.3072, QPS: 51.02,  on device: 1, query_count: 5000, time: 101.20304608345032
+EPOCH:3   Step [5/5], Loss: 2.3045, QPS: 254.84,  on device: 6, query_count: 25000, time: 101.55875658988953
+EPOCH:4   Step [1/5], Loss: 2.3064, QPS: 51.09,  on device: 7, query_count: 5000, time: 101.05449962615967
+EPOCH:4   Step [1/5], Loss: 2.3079, QPS: 49.86,  on device: 3, query_count: 5000, time: 103.62332153320312
+EPOCH:3   Step [5/5], Loss: 2.3095, QPS: 248.01,  on device: 0, query_count: 25000, time: 104.32867193222046
+EPOCH:4   Step [2/5], Loss: 2.3056, QPS: 98.78,  on device: 1, query_count: 10000, time: 104.4540708065033
+EPOCH:4   Step [2/5], Loss: 2.3094, QPS: 98.92,  on device: 7, query_count: 10000, time: 104.2461953163147
+EPOCH:4   Step [1/5], Loss: 2.3095, QPS: 49.32,  on device: 2, query_count: 5000, time: 104.70044994354248
+EPOCH:4   Step [1/5], Loss: 2.3083, QPS: 49.23,  on device: 5, query_count: 5000, time: 104.92562437057495
+EPOCH:4   Step [1/5], Loss: 2.3042, QPS: 49.21,  on device: 4, query_count: 5000, time: 104.95519757270813
+EPOCH:4   Step [1/5], Loss: 2.3075, QPS: 48.73,  on device: 6, query_count: 5000, time: 106.0491189956665
+EPOCH:4   Step [2/5], Loss: 2.3045, QPS: 96.47,  on device: 3, query_count: 10000, time: 107.002516746521
+EPOCH:4   Step [3/5], Loss: 2.3085, QPS: 143.56,  on device: 1, query_count: 15000, time: 107.75295758247375
+EPOCH:4   Step [3/5], Loss: 2.3094, QPS: 143.84,  on device: 7, query_count: 15000, time: 107.44649052619934
+EPOCH:4   Step [2/5], Loss: 2.3086, QPS: 95.48,  on device: 2, query_count: 10000, time: 108.05394506454468
+EPOCH:4   Step [2/5], Loss: 2.3079, QPS: 95.27,  on device: 5, query_count: 10000, time: 108.34117794036865
+EPOCH:4   Step [2/5], Loss: 2.3086, QPS: 95.25,  on device: 4, query_count: 10000, time: 108.3664882183075
+EPOCH:4   Step [2/5], Loss: 2.3060, QPS: 94.27,  on device: 6, query_count: 10000, time: 109.54743146896362
+EPOCH:4   Step [1/5], Loss: 2.3083, QPS: 47.24,  on device: 0, query_count: 5000, time: 109.34203910827637
+EPOCH:4   Step [3/5], Loss: 2.3098, QPS: 140.14,  on device: 3, query_count: 15000, time: 110.43485689163208
+EPOCH:4   Step [4/5], Loss: 2.3058, QPS: 185.55,  on device: 1, query_count: 20000, time: 111.0162365436554
+EPOCH:4   Step [4/5], Loss: 2.3075, QPS: 186.08,  on device: 7, query_count: 20000, time: 110.69283080101013
+EPOCH:4   Step [3/5], Loss: 2.3068, QPS: 138.78,  on device: 2, query_count: 15000, time: 111.39297199249268
+EPOCH:4   Step [3/5], Loss: 2.3069, QPS: 138.41,  on device: 5, query_count: 15000, time: 111.77472710609436
+EPOCH:4   Step [3/5], Loss: 2.3087, QPS: 138.38,  on device: 4, query_count: 15000, time: 111.78108024597168
+EPOCH:4   Step [3/5], Loss: 2.3059, QPS: 136.89,  on device: 6, query_count: 15000, time: 113.0468807220459
+EPOCH:4   Step [2/5], Loss: 2.3085, QPS: 91.43,  on device: 0, query_count: 10000, time: 112.92778706550598
+EPOCH:4   Step [4/5], Loss: 2.3089, QPS: 181.05,  on device: 3, query_count: 20000, time: 113.83031392097473
+EPOCH:4   Step [5/5], Loss: 2.3089, QPS: 225.13,  on device: 1, query_count: 25000, time: 114.28370213508606
+EPOCH:4   Step [5/5], Loss: 2.3059, QPS: 225.78,  on device: 7, query_count: 25000, time: 113.9001133441925
+EPOCH:4   Step [4/5], Loss: 2.3095, QPS: 179.49,  on device: 2, query_count: 20000, time: 114.74301075935364
+EPOCH:4   Step [4/5], Loss: 2.3090, QPS: 178.88,  on device: 5, query_count: 20000, time: 115.16689825057983
+EPOCH:4   Step [4/5], Loss: 2.3109, QPS: 178.87,  on device: 4, query_count: 20000, time: 115.1893904209137
+EPOCH:4   Step [4/5], Loss: 2.3066, QPS: 176.87,  on device: 6, query_count: 20000, time: 116.55319094657898
+EPOCH:4   Step [3/5], Loss: 2.3084, QPS: 132.79,  on device: 0, query_count: 15000, time: 116.52024698257446
+EPOCH:4   Step [5/5], Loss: 2.3083, QPS: 219.56,  on device: 3, query_count: 25000, time: 117.23775839805603
+EPOCH:4   Step [5/5], Loss: 2.3067, QPS: 217.81,  on device: 2, query_count: 25000, time: 118.08172726631165
+EPOCH:5   Step [1/5], Loss: 2.3063, QPS: 43.34,  on device: 1, query_count: 5000, time: 118.5934898853302
+EPOCH:4   Step [5/5], Loss: 2.3074, QPS: 217.01,  on device: 5, query_count: 25000, time: 118.61512637138367
+EPOCH:5   Step [1/5], Loss: 2.3063, QPS: 43.45,  on device: 7, query_count: 5000, time: 118.23583006858826
+EPOCH:4   Step [5/5], Loss: 2.3094, QPS: 216.97,  on device: 4, query_count: 25000, time: 118.62958335876465
+EPOCH:4   Step [5/5], Loss: 2.3076, QPS: 214.43,  on device: 6, query_count: 25000, time: 120.08578276634216
+EPOCH:4   Step [4/5], Loss: 2.3087, QPS: 171.59,  on device: 0, query_count: 20000, time: 120.11299157142639
+EPOCH:5   Step [1/5], Loss: 2.3065, QPS: 42.27,  on device: 3, query_count: 5000, time: 121.63672351837158
+EPOCH:5   Step [2/5], Loss: 2.3087, QPS: 84.30,  on device: 1, query_count: 10000, time: 121.92832612991333
+EPOCH:5   Step [2/5], Loss: 2.3096, QPS: 84.55,  on device: 7, query_count: 10000, time: 121.44277596473694
+EPOCH:5   Step [1/5], Loss: 2.3085, QPS: 41.87,  on device: 2, query_count: 5000, time: 122.74575781822205
+EPOCH:5   Step [1/5], Loss: 2.3055, QPS: 41.67,  on device: 5, query_count: 5000, time: 123.35393857955933
+EPOCH:5   Step [1/5], Loss: 2.3059, QPS: 41.68,  on device: 4, query_count: 5000, time: 123.33609747886658
+EPOCH:4   Step [5/5], Loss: 2.3071, QPS: 208.08,  on device: 0, query_count: 25000, time: 123.7520980834961
+EPOCH:5   Step [1/5], Loss: 2.3075, QPS: 41.29,  on device: 6, query_count: 5000, time: 124.59362030029297
+EPOCH:5   Step [2/5], Loss: 2.3063, QPS: 82.19,  on device: 3, query_count: 10000, time: 125.05584692955017
+EPOCH:5   Step [3/5], Loss: 2.3089, QPS: 122.99,  on device: 1, query_count: 15000, time: 125.2216682434082
+EPOCH:5   Step [3/5], Loss: 2.3056, QPS: 123.48,  on device: 7, query_count: 15000, time: 124.75027513504028
+EPOCH:5   Step [2/5], Loss: 2.3087, QPS: 81.45,  on device: 2, query_count: 10000, time: 126.0919783115387
+EPOCH:5   Step [2/5], Loss: 2.3090, QPS: 81.05,  on device: 5, query_count: 10000, time: 126.8134593963623
+EPOCH:5   Step [2/5], Loss: 2.3096, QPS: 81.06,  on device: 4, query_count: 10000, time: 126.78146004676819
+EPOCH:5   Step [2/5], Loss: 2.3098, QPS: 80.24,  on device: 6, query_count: 10000, time: 128.13335394859314
+EPOCH:5   Step [4/5], Loss: 2.3096, QPS: 160.28,  on device: 7, query_count: 20000, time: 127.98932552337646
+EPOCH:5   Step [4/5], Loss: 2.3047, QPS: 159.67,  on device: 1, query_count: 20000, time: 128.52640295028687
+EPOCH:5   Step [3/5], Loss: 2.3060, QPS: 119.91,  on device: 3, query_count: 15000, time: 128.47649836540222
+EPOCH:5   Step [1/5], Loss: 2.3092, QPS: 39.89,  on device: 0, query_count: 5000, time: 128.88924312591553
+EPOCH:5   Step [3/5], Loss: 2.3075, QPS: 118.93,  on device: 2, query_count: 15000, time: 129.47326040267944
+EPOCH:5   Step [3/5], Loss: 2.3075, QPS: 118.25,  on device: 5, query_count: 15000, time: 130.26906943321228
+EPOCH:5   Step [3/5], Loss: 2.3083, QPS: 118.28,  on device: 4, query_count: 15000, time: 130.24033284187317
+EPOCH:5   Step [3/5], Loss: 2.3071, QPS: 117.03,  on device: 6, query_count: 15000, time: 131.68521690368652
+EPOCH:5   Step [5/5], Loss: 2.3109, QPS: 195.28,  on device: 7, query_count: 25000, time: 131.18407368659973
+EPOCH:5   Step [5/5], Loss: 2.3074, QPS: 194.46,  on device: 1, query_count: 25000, time: 131.84150958061218
+EPOCH:5   Step [4/5], Loss: 2.3076, QPS: 155.63,  on device: 3, query_count: 20000, time: 131.90675354003906
+EPOCH:5   Step [2/5], Loss: 2.3078, QPS: 77.57,  on device: 0, query_count: 10000, time: 132.56320691108704
+EPOCH:5   Step [4/5], Loss: 2.3084, QPS: 154.43,  on device: 2, query_count: 20000, time: 132.8599853515625
+EPOCH:5   Step [4/5], Loss: 2.3069, QPS: 153.49,  on device: 5, query_count: 20000, time: 133.74448609352112
+EPOCH:5   Step [4/5], Loss: 2.3056, QPS: 153.52,  on device: 4, query_count: 20000, time: 133.71476554870605
+EPOCH:5   Step [4/5], Loss: 2.3075, QPS: 151.84,  on device: 6, query_count: 20000, time: 135.2439410686493
+EPOCH:5   Step [5/5], Loss: 2.3067, QPS: 189.48,  on device: 3, query_count: 25000, time: 135.3490390777588
+EPOCH:6   Step [1/5], Loss: 2.3073, QPS: 37.78,  on device: 7, query_count: 5000, time: 135.55199456214905
+EPOCH:6   Step [1/5], Loss: 2.3080, QPS: 37.62,  on device: 1, query_count: 5000, time: 136.17322063446045
+EPOCH:5   Step [3/5], Loss: 2.3086, QPS: 113.12,  on device: 0, query_count: 15000, time: 136.19652581214905
+EPOCH:5   Step [5/5], Loss: 2.3098, QPS: 188.12,  on device: 2, query_count: 25000, time: 136.2345678806305
+EPOCH:5   Step [5/5], Loss: 2.3087, QPS: 186.88,  on device: 5, query_count: 25000, time: 137.18771862983704
+EPOCH:5   Step [5/5], Loss: 2.3085, QPS: 186.92,  on device: 4, query_count: 25000, time: 137.18805074691772
+EPOCH:5   Step [5/5], Loss: 2.3103, QPS: 184.81,  on device: 6, query_count: 25000, time: 138.82322549819946
+EPOCH:6   Step [2/5], Loss: 2.3073, QPS: 73.75,  on device: 7, query_count: 10000, time: 138.80340313911438
+EPOCH:6   Step [2/5], Loss: 2.3072, QPS: 73.42,  on device: 1, query_count: 10000, time: 139.54579067230225
+EPOCH:6   Step [1/5], Loss: 2.3072, QPS: 36.66,  on device: 3, query_count: 5000, time: 139.79712057113647
+EPOCH:5   Step [4/5], Loss: 2.3088, QPS: 146.81,  on device: 0, query_count: 20000, time: 139.88971066474915
+EPOCH:6   Step [1/5], Loss: 2.3061, QPS: 36.36,  on device: 2, query_count: 5000, time: 140.88288927078247
+EPOCH:6   Step [1/5], Loss: 2.3093, QPS: 36.09,  on device: 4, query_count: 5000, time: 141.95181441307068
+EPOCH:6   Step [1/5], Loss: 2.3084, QPS: 36.07,  on device: 5, query_count: 5000, time: 142.03169798851013
+EPOCH:6   Step [3/5], Loss: 2.3111, QPS: 108.04,  on device: 7, query_count: 15000, time: 142.01152205467224
+EPOCH:6   Step [3/5], Loss: 2.3064, QPS: 107.47,  on device: 1, query_count: 15000, time: 142.93853974342346
+EPOCH:6   Step [1/5], Loss: 2.3063, QPS: 35.76,  on device: 6, query_count: 5000, time: 143.35266137123108
+EPOCH:6   Step [2/5], Loss: 2.3072, QPS: 71.52,  on device: 3, query_count: 10000, time: 143.25234460830688
+EPOCH:5   Step [5/5], Loss: 2.3074, QPS: 178.67,  on device: 0, query_count: 25000, time: 143.57610511779785
+EPOCH:6   Step [2/5], Loss: 2.3080, QPS: 70.96,  on device: 2, query_count: 10000, time: 144.27435278892517
+EPOCH:6   Step [2/5], Loss: 2.3075, QPS: 70.43,  on device: 4, query_count: 10000, time: 145.43611407279968
+EPOCH:6   Step [2/5], Loss: 2.3077, QPS: 70.39,  on device: 5, query_count: 10000, time: 145.5137267112732
+EPOCH:6   Step [4/5], Loss: 2.3074, QPS: 140.80,  on device: 7, query_count: 20000, time: 145.20013666152954
+EPOCH:6   Step [4/5], Loss: 2.3057, QPS: 139.89,  on device: 1, query_count: 20000, time: 146.27339148521423
+EPOCH:6   Step [2/5], Loss: 2.3100, QPS: 69.74,  on device: 6, query_count: 10000, time: 146.93727493286133
+EPOCH:6   Step [3/5], Loss: 2.3082, QPS: 104.69,  on device: 3, query_count: 15000, time: 146.71459698677063
+EPOCH:6   Step [3/5], Loss: 2.3119, QPS: 103.94,  on device: 2, query_count: 15000, time: 147.67407774925232
+EPOCH:6   Step [1/5], Loss: 2.3071, QPS: 34.45,  on device: 0, query_count: 5000, time: 148.7526159286499
+EPOCH:6   Step [5/5], Loss: 2.3097, QPS: 172.14,  on device: 7, query_count: 25000, time: 148.5406665802002
+EPOCH:6   Step [3/5], Loss: 2.3054, QPS: 103.06,  on device: 5, query_count: 15000, time: 148.98410749435425
+EPOCH:6   Step [3/5], Loss: 2.3087, QPS: 103.11,  on device: 4, query_count: 15000, time: 148.92761182785034
+EPOCH:6   Step [5/5], Loss: 2.3062, QPS: 170.87,  on device: 1, query_count: 25000, time: 149.61184406280518
+EPOCH:6   Step [3/5], Loss: 2.3081, QPS: 102.06,  on device: 6, query_count: 15000, time: 150.52708959579468
+EPOCH:6   Step [4/5], Loss: 2.3108, QPS: 136.29,  on device: 3, query_count: 20000, time: 150.18629622459412
+EPOCH:6   Step [4/5], Loss: 2.3096, QPS: 135.40,  on device: 2, query_count: 20000, time: 151.05872058868408
+EPOCH:6   Step [2/5], Loss: 2.3083, QPS: 67.21,  on device: 0, query_count: 10000, time: 152.3820252418518
+EPOCH:6   Step [4/5], Loss: 2.3064, QPS: 134.21,  on device: 5, query_count: 20000, time: 152.45372867584229
+EPOCH:6   Step [4/5], Loss: 2.3075, QPS: 134.26,  on device: 4, query_count: 20000, time: 152.42240476608276
+EPOCH:7   Step [1/5], Loss: 2.3066, QPS: 33.40,  on device: 7, query_count: 5000, time: 152.9060800075531
+EPOCH:6   Step [5/5], Loss: 2.3099, QPS: 166.42,  on device: 3, query_count: 25000, time: 153.66334772109985
+EPOCH:6   Step [4/5], Loss: 2.3069, QPS: 132.84,  on device: 6, query_count: 20000, time: 154.1189706325531
+EPOCH:7   Step [1/5], Loss: 2.3075, QPS: 33.18,  on device: 1, query_count: 5000, time: 153.9672248363495
+EPOCH:6   Step [5/5], Loss: 2.3073, QPS: 165.46,  on device: 2, query_count: 25000, time: 154.44657349586487
+EPOCH:6   Step [5/5], Loss: 2.3098, QPS: 163.95,  on device: 5, query_count: 25000, time: 155.92293739318848
+EPOCH:6   Step [5/5], Loss: 2.3061, QPS: 163.98,  on device: 4, query_count: 25000, time: 155.92582368850708
+EPOCH:6   Step [3/5], Loss: 2.3079, QPS: 98.42,  on device: 0, query_count: 15000, time: 156.0856065750122
+EPOCH:7   Step [2/5], Loss: 2.3098, QPS: 65.39,  on device: 7, query_count: 10000, time: 156.24660396575928
+EPOCH:7   Step [2/5], Loss: 2.3064, QPS: 64.93,  on device: 1, query_count: 10000, time: 157.30565762519836
+EPOCH:6   Step [5/5], Loss: 2.3068, QPS: 162.18,  on device: 6, query_count: 25000, time: 157.71177530288696
+EPOCH:7   Step [1/5], Loss: 2.3087, QPS: 32.32,  on device: 3, query_count: 5000, time: 158.12616634368896
+EPOCH:7   Step [1/5], Loss: 2.3064, QPS: 32.10,  on device: 2, query_count: 5000, time: 159.0968897342682
+EPOCH:6   Step [4/5], Loss: 2.3062, QPS: 128.11,  on device: 0, query_count: 20000, time: 159.7253177165985
+EPOCH:7   Step [3/5], Loss: 2.3064, QPS: 95.98,  on device: 7, query_count: 15000, time: 159.54834461212158
+EPOCH:7   Step [3/5], Loss: 2.3084, QPS: 95.34,  on device: 1, query_count: 15000, time: 160.6561403274536
+EPOCH:7   Step [1/5], Loss: 2.3088, QPS: 31.79,  on device: 5, query_count: 5000, time: 160.69486284255981
+EPOCH:7   Step [1/5], Loss: 2.3094, QPS: 31.79,  on device: 4, query_count: 5000, time: 160.71324396133423
+EPOCH:7   Step [2/5], Loss: 2.3089, QPS: 63.23,  on device: 3, query_count: 10000, time: 161.5980257987976
+EPOCH:7   Step [1/5], Loss: 2.3079, QPS: 31.50,  on device: 6, query_count: 5000, time: 162.30731868743896
+EPOCH:7   Step [2/5], Loss: 2.3071, QPS: 62.84,  on device: 2, query_count: 10000, time: 162.51832628250122
+EPOCH:7   Step [4/5], Loss: 2.3083, QPS: 125.33,  on device: 7, query_count: 20000, time: 162.851500749588
+EPOCH:6   Step [5/5], Loss: 2.3096, QPS: 156.49,  on device: 0, query_count: 25000, time: 163.37972164154053
+EPOCH:7   Step [4/5], Loss: 2.3083, QPS: 124.46,  on device: 1, query_count: 20000, time: 164.00777220726013
+EPOCH:7   Step [2/5], Loss: 2.3070, QPS: 62.22,  on device: 5, query_count: 10000, time: 164.15220618247986
+EPOCH:7   Step [2/5], Loss: 2.3079, QPS: 62.21,  on device: 4, query_count: 10000, time: 164.21168541908264
+EPOCH:7   Step [3/5], Loss: 2.3079, QPS: 92.80,  on device: 3, query_count: 15000, time: 165.06618404388428
+EPOCH:7   Step [2/5], Loss: 2.3091, QPS: 61.60,  on device: 6, query_count: 10000, time: 165.91208600997925
+EPOCH:7   Step [3/5], Loss: 2.3070, QPS: 92.28,  on device: 2, query_count: 15000, time: 165.91525053977966
+EPOCH:7   Step [5/5], Loss: 2.3115, QPS: 153.48,  on device: 7, query_count: 25000, time: 166.06447172164917
+EPOCH:7   Step [5/5], Loss: 2.3094, QPS: 152.40,  on device: 1, query_count: 25000, time: 167.42123532295227
+EPOCH:7   Step [3/5], Loss: 2.3067, QPS: 91.36,  on device: 5, query_count: 15000, time: 167.6317310333252
+EPOCH:7   Step [3/5], Loss: 2.3083, QPS: 91.33,  on device: 4, query_count: 15000, time: 167.7100224494934
+EPOCH:7   Step [1/5], Loss: 2.3069, QPS: 30.32,  on device: 0, query_count: 5000, time: 168.55099391937256
+EPOCH:7   Step [4/5], Loss: 2.3083, QPS: 121.14,  on device: 3, query_count: 20000, time: 168.53867363929749
+EPOCH:7   Step [3/5], Loss: 2.3067, QPS: 90.39,  on device: 6, query_count: 15000, time: 169.51822519302368
+EPOCH:7   Step [4/5], Loss: 2.3104, QPS: 120.52,  on device: 2, query_count: 20000, time: 169.3603699207306
+EPOCH:8   Step [1/5], Loss: 2.3061, QPS: 29.90,  on device: 7, query_count: 5000, time: 170.5325367450714
+EPOCH:7   Step [4/5], Loss: 2.3075, QPS: 119.29,  on device: 5, query_count: 20000, time: 171.10707569122314
+EPOCH:7   Step [4/5], Loss: 2.3108, QPS: 119.23,  on device: 4, query_count: 20000, time: 171.21775722503662
+EPOCH:8   Step [1/5], Loss: 2.3097, QPS: 29.68,  on device: 1, query_count: 5000, time: 171.8047754764557
+EPOCH:7   Step [5/5], Loss: 2.3087, QPS: 148.30,  on device: 3, query_count: 25000, time: 172.02777433395386
+EPOCH:7   Step [2/5], Loss: 2.3091, QPS: 59.32,  on device: 0, query_count: 10000, time: 172.22519850730896
+EPOCH:7   Step [4/5], Loss: 2.3065, QPS: 117.96,  on device: 6, query_count: 20000, time: 173.13473534584045
+EPOCH:7   Step [5/5], Loss: 2.3082, QPS: 147.58,  on device: 2, query_count: 25000, time: 172.7893397808075
+EPOCH:8   Step [2/5], Loss: 2.3075, QPS: 58.63,  on device: 7, query_count: 10000, time: 173.88891911506653
+EPOCH:7   Step [5/5], Loss: 2.3100, QPS: 146.08,  on device: 5, query_count: 25000, time: 174.59984016418457
+EPOCH:7   Step [5/5], Loss: 2.3059, QPS: 145.98,  on device: 4, query_count: 25000, time: 174.74266362190247
+EPOCH:8   Step [2/5], Loss: 2.3072, QPS: 58.19,  on device: 1, query_count: 10000, time: 175.17154741287231
+EPOCH:7   Step [3/5], Loss: 2.3080, QPS: 87.08,  on device: 0, query_count: 15000, time: 175.89826917648315
+EPOCH:7   Step [5/5], Loss: 2.3073, QPS: 144.37,  on device: 6, query_count: 25000, time: 176.75713348388672
+EPOCH:8   Step [1/5], Loss: 2.3084, QPS: 28.89,  on device: 3, query_count: 5000, time: 176.51366806030273
+EPOCH:8   Step [1/5], Loss: 2.3059, QPS: 28.72,  on device: 2, query_count: 5000, time: 177.45024752616882
+EPOCH:8   Step [3/5], Loss: 2.3051, QPS: 86.25,  on device: 7, query_count: 15000, time: 177.1428325176239
+EPOCH:8   Step [3/5], Loss: 2.3071, QPS: 85.61,  on device: 1, query_count: 15000, time: 178.54734134674072
+EPOCH:8   Step [1/5], Loss: 2.3081, QPS: 28.42,  on device: 5, query_count: 5000, time: 179.34410738945007
+EPOCH:7   Step [4/5], Loss: 2.3107, QPS: 113.68,  on device: 0, query_count: 20000, time: 179.5693805217743
+EPOCH:8   Step [1/5], Loss: 2.3072, QPS: 28.40,  on device: 4, query_count: 5000, time: 179.48996782302856
+EPOCH:8   Step [2/5], Loss: 2.3079, QPS: 56.64,  on device: 3, query_count: 10000, time: 180.00345945358276
+EPOCH:8   Step [4/5], Loss: 2.3075, QPS: 112.88,  on device: 7, query_count: 20000, time: 180.50995779037476
+EPOCH:8   Step [2/5], Loss: 2.3059, QPS: 56.34,  on device: 2, query_count: 10000, time: 180.8941888809204
+EPOCH:8   Step [1/5], Loss: 2.3091, QPS: 28.13,  on device: 6, query_count: 5000, time: 181.38205790519714
+EPOCH:8   Step [4/5], Loss: 2.3060, QPS: 111.99,  on device: 1, query_count: 20000, time: 181.92049646377563
+EPOCH:8   Step [2/5], Loss: 2.3090, QPS: 55.75,  on device: 5, query_count: 10000, time: 182.8383274078369
+EPOCH:8   Step [2/5], Loss: 2.3075, QPS: 55.70,  on device: 4, query_count: 10000, time: 183.0164589881897
+EPOCH:7   Step [5/5], Loss: 2.3058, QPS: 139.20,  on device: 0, query_count: 25000, time: 183.2398898601532
+EPOCH:8   Step [3/5], Loss: 2.3071, QPS: 83.32,  on device: 3, query_count: 15000, time: 183.49854040145874
+EPOCH:8   Step [5/5], Loss: 2.3069, QPS: 138.47,  on device: 7, query_count: 25000, time: 183.82054615020752
+EPOCH:8   Step [3/5], Loss: 2.3074, QPS: 82.91,  on device: 2, query_count: 15000, time: 184.34464049339294
+EPOCH:8   Step [2/5], Loss: 2.3066, QPS: 55.12,  on device: 6, query_count: 10000, time: 185.0080943107605
+EPOCH:8   Step [5/5], Loss: 2.3073, QPS: 137.40,  on device: 1, query_count: 25000, time: 185.3004288673401
+EPOCH:8   Step [3/5], Loss: 2.3080, QPS: 82.02,  on device: 5, query_count: 15000, time: 186.37169885635376
+EPOCH:8   Step [3/5], Loss: 2.3090, QPS: 81.94,  on device: 4, query_count: 15000, time: 186.54593873023987
+EPOCH:8   Step [4/5], Loss: 2.3040, QPS: 108.97,  on device: 3, query_count: 20000, time: 186.99256801605225
+EPOCH:8   Step [4/5], Loss: 2.3081, QPS: 108.47,  on device: 2, query_count: 20000, time: 187.78911924362183
+EPOCH:8   Step [3/5], Loss: 2.3103, QPS: 81.06,  on device: 6, query_count: 15000, time: 188.63442635536194
+EPOCH:8   Step [1/5], Loss: 2.3054, QPS: 27.05,  on device: 0, query_count: 5000, time: 188.47234892845154
+EPOCH:9   Step [1/5], Loss: 2.3103, QPS: 27.03,  on device: 7, query_count: 5000, time: 188.31160044670105
+EPOCH:9   Step [1/5], Loss: 2.3097, QPS: 26.83,  on device: 1, query_count: 5000, time: 189.7377347946167
+EPOCH:8   Step [4/5], Loss: 2.3089, QPS: 107.29,  on device: 5, query_count: 20000, time: 189.87903308868408
+EPOCH:8   Step [4/5], Loss: 2.3083, QPS: 107.19,  on device: 4, query_count: 20000, time: 190.0802640914917
+EPOCH:8   Step [5/5], Loss: 2.3071, QPS: 133.67,  on device: 3, query_count: 25000, time: 190.49663400650024
+EPOCH:8   Step [5/5], Loss: 2.3084, QPS: 133.10,  on device: 2, query_count: 25000, time: 191.21853065490723
+EPOCH:8   Step [4/5], Loss: 2.3067, QPS: 106.01,  on device: 6, query_count: 20000, time: 192.26924681663513
+EPOCH:9   Step [2/5], Loss: 2.3080, QPS: 53.09,  on device: 7, query_count: 10000, time: 191.6707262992859
+EPOCH:8   Step [2/5], Loss: 2.3073, QPS: 53.05,  on device: 0, query_count: 10000, time: 192.1757755279541
+EPOCH:9   Step [2/5], Loss: 2.3046, QPS: 52.70,  on device: 1, query_count: 10000, time: 193.1290898323059
+EPOCH:8   Step [5/5], Loss: 2.3025, QPS: 131.64,  on device: 5, query_count: 25000, time: 193.39050960540771
+EPOCH:8   Step [5/5], Loss: 2.3063, QPS: 131.50,  on device: 4, query_count: 25000, time: 193.6261682510376
+EPOCH:9   Step [1/5], Loss: 2.3074, QPS: 26.10,  on device: 3, query_count: 5000, time: 194.9860565662384
+EPOCH:9   Step [3/5], Loss: 2.3077, QPS: 78.25,  on device: 7, query_count: 15000, time: 194.99133110046387
+EPOCH:8   Step [5/5], Loss: 2.3052, QPS: 130.00,  on device: 6, query_count: 25000, time: 195.91905236244202
+EPOCH:8   Step [3/5], Loss: 2.3065, QPS: 78.04,  on device: 0, query_count: 15000, time: 195.87393760681152
+EPOCH:9   Step [1/5], Loss: 2.3053, QPS: 25.98,  on device: 2, query_count: 5000, time: 195.88190913200378
+EPOCH:9   Step [3/5], Loss: 2.3074, QPS: 77.65,  on device: 1, query_count: 15000, time: 196.52392029762268
+EPOCH:9   Step [1/5], Loss: 2.3070, QPS: 25.68,  on device: 5, query_count: 5000, time: 198.1966187953949
+EPOCH:9   Step [1/5], Loss: 2.3088, QPS: 25.65,  on device: 4, query_count: 5000, time: 198.38806557655334
+EPOCH:9   Step [2/5], Loss: 2.3056, QPS: 51.28,  on device: 3, query_count: 10000, time: 198.50444626808167
+EPOCH:9   Step [4/5], Loss: 2.3089, QPS: 102.55,  on device: 7, query_count: 20000, time: 198.2281141281128
+EPOCH:9   Step [2/5], Loss: 2.3096, QPS: 51.04,  on device: 2, query_count: 10000, time: 199.34290385246277
+EPOCH:8   Step [4/5], Loss: 2.3093, QPS: 102.09,  on device: 0, query_count: 20000, time: 199.5899314880371
+EPOCH:9   Step [4/5], Loss: 2.3074, QPS: 101.75,  on device: 1, query_count: 20000, time: 199.95788049697876
+EPOCH:9   Step [1/5], Loss: 2.3083, QPS: 25.39,  on device: 6, query_count: 5000, time: 200.51418948173523
+EPOCH:9   Step [2/5], Loss: 2.3090, QPS: 50.45,  on device: 5, query_count: 10000, time: 201.70963382720947
+EPOCH:9   Step [5/5], Loss: 2.3074, QPS: 126.10,  on device: 7, query_count: 25000, time: 201.58147978782654
+EPOCH:9   Step [2/5], Loss: 2.3087, QPS: 50.40,  on device: 4, query_count: 10000, time: 201.95703721046448
+EPOCH:9   Step [3/5], Loss: 2.3085, QPS: 75.55,  on device: 3, query_count: 15000, time: 202.03170680999756
+elapsed_time 201.7332797050476
+Total QPS: 123.93
+25000
+EPOCH:9   Step [3/5], Loss: 2.3060, QPS: 75.23,  on device: 2, query_count: 15000, time: 202.81775164604187
+EPOCH:9   Step [5/5], Loss: 2.3052, QPS: 125.01,  on device: 1, query_count: 25000, time: 203.36137199401855
+EPOCH:8   Step [5/5], Loss: 2.3078, QPS: 125.24,  on device: 0, query_count: 25000, time: 203.31798839569092
+elapsed_time 203.4946846961975
+Total QPS: 122.85
+25000
+EPOCH:9   Step [2/5], Loss: 2.3075, QPS: 49.86,  on device: 6, query_count: 10000, time: 204.09148240089417
+EPOCH:9   Step [3/5], Loss: 2.3071, QPS: 74.35,  on device: 5, query_count: 15000, time: 205.17548179626465
+EPOCH:9   Step [4/5], Loss: 2.3083, QPS: 98.98,  on device: 3, query_count: 20000, time: 205.56668400764465
+EPOCH:9   Step [3/5], Loss: 2.3079, QPS: 74.26,  on device: 4, query_count: 15000, time: 205.527423620224
+EPOCH:9   Step [4/5], Loss: 2.3066, QPS: 98.59,  on device: 2, query_count: 20000, time: 206.3078429698944
+EPOCH:9   Step [3/5], Loss: 2.3085, QPS: 73.48,  on device: 6, query_count: 15000, time: 207.68397665023804
+EPOCH:9   Step [1/5], Loss: 2.3091, QPS: 24.40,  on device: 0, query_count: 5000, time: 208.59110808372498
+EPOCH:9   Step [4/5], Loss: 2.3074, QPS: 97.46,  on device: 5, query_count: 20000, time: 208.65068769454956
+EPOCH:9   Step [5/5], Loss: 2.3059, QPS: 121.60,  on device: 3, query_count: 25000, time: 209.11150002479553
+EPOCH:9   Step [4/5], Loss: 2.3078, QPS: 97.29,  on device: 4, query_count: 20000, time: 209.11629605293274
+elapsed_time 209.23781061172485
+Total QPS: 119.48
+25000
+EPOCH:9   Step [5/5], Loss: 2.3082, QPS: 121.16,  on device: 2, query_count: 25000, time: 209.80561065673828
+elapsed_time 210.01477599143982
+Total QPS: 119.04
+25000
+EPOCH:9   Step [4/5], Loss: 2.3072, QPS: 96.28,  on device: 6, query_count: 20000, time: 211.29426860809326
+EPOCH:9   Step [5/5], Loss: 2.3074, QPS: 119.80,  on device: 5, query_count: 25000, time: 212.12176489830017
+EPOCH:9   Step [2/5], Loss: 2.3084, QPS: 47.93,  on device: 0, query_count: 10000, time: 212.3283212184906
+elapsed_time 212.32746505737305
+Total QPS: 117.74
+25000
+EPOCH:9   Step [5/5], Loss: 2.3100, QPS: 119.53,  on device: 4, query_count: 25000, time: 212.70603919029236
+elapsed_time 212.91242456436157
+Total QPS: 117.42
+25000
+EPOCH:9   Step [5/5], Loss: 2.3085, QPS: 118.30,  on device: 6, query_count: 25000, time: 214.90838265419006
+elapsed_time 215.02375960350037
+Total QPS: 116.27
+25000
+EPOCH:9   Step [3/5], Loss: 2.3071, QPS: 70.63,  on device: 0, query_count: 15000, time: 216.0593283176422
+EPOCH:9   Step [4/5], Loss: 2.3059, QPS: 92.55,  on device: 0, query_count: 20000, time: 219.80584025382996
+EPOCH:9   Step [5/5], Loss: 2.3104, QPS: 113.72,  on device: 0, query_count: 25000, time: 223.5567696094513
+elapsed_time 223.81940388679504
+Total QPS: 111.70
+25000
