@@ -38,9 +38,10 @@ class MyDataset(torch.utils.data.Dataset):
         sample = self.data[idx]
         target = self.targets[idx]
         return sample, target
-
+import torch.utils.data.DistributedSampler as DistributedSampler
 dataset = MyDataset()
-dataloader = DataLoader(dataset, batch_size=1000, shuffle=True)
+# dataloader = DataLoader(dataset, batch_size=1000, shuffle=True)
+
 
 def demo_basic():
     # outputs = torch.randn((20000, 10000))  # Replace with your actual data
@@ -48,6 +49,23 @@ def demo_basic():
     dist.init_process_group("nccl")
     rank = dist.get_rank()
     print(f"Start running basic DDP example on rank {rank}.")
+
+    sampler = DistributedSampler(dataset,
+                                 num_replicas=8,
+                                 rank=rank,
+                                 shuffle=True,  # May be True
+                                 seed=42)
+    # Wrap train dataset into DataLoader
+    dataloader = DataLoader(dataset,
+                            batch_size=1000,
+                            shuffle=False,  # Must be False!
+                            num_workers=4,
+                            sampler=sampler,
+                            pin_memory=True)
+
+
+
+
 
     # create model and move it to GPU with id rank
     device_id = rank % torch.cuda.device_count()
