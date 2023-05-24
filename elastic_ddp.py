@@ -38,7 +38,7 @@ class MyDataset(torch.utils.data.Dataset):
         sample = self.data[idx]
         target = self.targets[idx]
         return sample, target
-import torch.utils.data.DistributedSampler as DistributedSampler
+# import torch.utils.data.DistributedSampler as DistributedSampler
 dataset = MyDataset()
 # dataloader = DataLoader(dataset, batch_size=1000, shuffle=True)
 
