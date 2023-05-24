@@ -44,6 +44,7 @@ dataset = MyDataset()
 
 
 def demo_basic():
+    start_time = time.time()
     # outputs = torch.randn((20000, 10000))  # Replace with your actual data
     # labels = torch.randint(0, 10, (20000,))
     dist.init_process_group("nccl")
@@ -77,10 +78,10 @@ def demo_basic():
 
     for epoch in range(num_epochs):
         dataloader.sampler.set_epoch(epoch)
-        if epoch == 1:
-            # Training loop with QPS calculation
-            start_time = time.time()
-            query_count = 0
+        # if epoch == 1:
+        # Training loop with QPS calculation
+
+        query_count = 0
         for batch_idx, (inputs, targets) in enumerate(dataloader):
             inputs, targets = inputs.to(device_id), targets.to(device_id)
             # Forward pass
