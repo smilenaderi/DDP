@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 
 NUM_REPLICAS = 1
-BATCH_SIZE = 2500
+BATCH_SIZE = 5000
 
 
 
