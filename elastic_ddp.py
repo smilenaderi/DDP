@@ -99,13 +99,13 @@ def demo_basic():
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            if epoch > 0:
-                query_count += inputs.size(0)
+            # if epoch > 0:
+            query_count += inputs.size(0)
 
             # if batch_idx % log_interval == 0 and epoch > 0:
             elapsed_time = time.time() - start_time
             qps = query_count / elapsed_time
-            print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f}  on device: {}, query_count"
+            print("EPOCH:{}   Step [{}/{}], Loss: {:.4f}, QPS: {:.2f},  on device: {}, query_count: {}"
                   .format(epoch, batch_idx + 1, len(dataloader), loss.item(), qps, device_id, query_count))
     elapsed_time = time.time() - start_time
 
