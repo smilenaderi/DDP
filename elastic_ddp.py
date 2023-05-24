@@ -50,7 +50,7 @@ def demo_basic():
     rank = dist.get_rank()
     print(f"Start running basic DDP example on rank {rank}.")
 
-    sampler = DistributedSampler(dataset,
+    sampler = dist.DistributedSampler(dataset,
                                  num_replicas=8,
                                  rank=rank,
                                  shuffle=True,  # May be True
@@ -79,7 +79,7 @@ def demo_basic():
     log_interval = 10  # Print the progress every 10 batches
 
     for epoch in range(num_epochs):
-
+        dataloader.sampler.set_epoch(epoch)
         if epoch == 1:
             # Training loop with QPS calculation
             start_time = time.time()
