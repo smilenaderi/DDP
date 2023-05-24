@@ -4,7 +4,7 @@ import torch
 import torch.distributed as dist
 import torch.nn as nn
 import torch.optim as optim
-
+from torch.utils.data import DataLoader, DistributedSampler
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader
 
@@ -50,7 +50,7 @@ def demo_basic():
     rank = dist.get_rank()
     print(f"Start running basic DDP example on rank {rank}.")
 
-    sampler = dist.DistributedSampler(dataset,
+    sampler = DistributedSampler(dataset,
                                  num_replicas=8,
                                  rank=rank,
                                  shuffle=True,  # May be True
