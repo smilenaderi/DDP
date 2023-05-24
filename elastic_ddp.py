@@ -75,13 +75,14 @@ def demo_basic():
 
     num_epochs = 10  # Number of epochs for training
     log_interval = 10  # Print the progress every 10 batches
-
+    print(f' Loading Time: {time.time() - start_time} rank {rank}')
     for epoch in range(num_epochs):
         dataloader.sampler.set_epoch(epoch)
         # if epoch == 1:
         # Training loop with QPS calculation
 
         query_count = 0
+
         for batch_idx, (inputs, targets) in enumerate(dataloader):
             inputs, targets = inputs.to(device_id), targets.to(device_id)
             # Forward pass
